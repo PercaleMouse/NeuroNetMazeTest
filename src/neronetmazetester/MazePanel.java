@@ -17,23 +17,36 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 
+/**
+ *
+ * @author Admin
+ */
 public class MazePanel extends javax.swing.JPanel {
-
-    boolean enableEdit = false;
-
-    int mazeSize = 16;
-    int vectorSize = mazeSize * mazeSize;
-    JButton[] buttons = new JButton[vectorSize];
-
-    ImageIcon wallIcon = new ImageIcon(getClass().getResource("img/tile_1_2.png"));
-    ImageIcon flourIcon = new ImageIcon(getClass().getResource("img/tile_4_1.png"));
-    ImageIcon iconN = new ImageIcon(getClass().getResource("img/N.png"));
-    ImageIcon iconE = new ImageIcon(getClass().getResource("img/E.png"));
-    ImageIcon iconS = new ImageIcon(getClass().getResource("img/S.png"));
-    ImageIcon iconW = new ImageIcon(getClass().getResource("img/W.png"));
-    ActionListener al;
+   
+    private boolean enableEdit;
+    private int mazeSize;
+    private int vectorSize;
+    private JButton[] buttons;
+    private ImageIcon wallIcon;
+    private ImageIcon flourIcon;
+    private ImageIcon iconN;
+    private ImageIcon iconE;
+    private ImageIcon iconS;
+    private ImageIcon iconW;
+    private ActionListener al;
 
     MazePanel() {
+        iconW = new ImageIcon(getClass().getResource("img/W.png"));
+        iconS = new ImageIcon(getClass().getResource("img/S.png"));
+        iconE = new ImageIcon(getClass().getResource("img/E.png"));
+        iconN = new ImageIcon(getClass().getResource("img/N.png"));
+        flourIcon = new ImageIcon(getClass().getResource("img/tile_4_1.png"));
+        wallIcon = new ImageIcon(getClass().getResource("img/tile_1_2.png"));
+        buttons = new JButton[vectorSize];
+        vectorSize = mazeSize * mazeSize;
+        mazeSize = 16;
+        enableEdit = false;
+        
         al = (ActionEvent e) -> {
             JButton b = (JButton) e.getSource();
             if (enableEdit) {
@@ -43,7 +56,6 @@ public class MazePanel extends javax.swing.JPanel {
                     b.setIcon(wallIcon);
                 }
             }
-            System.out.println(b.getActionCommand());
         };
 
         setLayout(new GridLayout(mazeSize, mazeSize, 0, 0));
