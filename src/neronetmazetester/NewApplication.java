@@ -22,7 +22,7 @@ public class NewApplication extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.FlowLayout());
         jPanel2.add(mazePanel);
         timer = new java.util.Timer();
-        timer.schedule(new randomMazeMove(), 0, 100);
+        //timer.schedule(new randomMazeMove(), 0, 100);
     }
 
     /**
