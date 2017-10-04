@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package neronetmazetester;
-
-import java.awt.event.ItemEvent;
-
 /**
  *
  * @author Admin
@@ -247,9 +244,9 @@ public class NewApplication extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void jToggleButton1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton1ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
+        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
             mazePanel.setEditModeON();
-        } else if (evt.getStateChange() == ItemEvent.DESELECTED) {
+        } else if (evt.getStateChange() == java.awt.event.ItemEvent.DESELECTED) {
             mazePanel.setEditModeOFF();
         }
     }//GEN-LAST:event_jToggleButton1ItemStateChanged
