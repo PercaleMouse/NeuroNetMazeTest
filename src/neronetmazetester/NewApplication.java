@@ -22,7 +22,7 @@ public class NewApplication extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.FlowLayout());
         jPanel2.add(mazePanel);
         timer = new java.util.Timer();
-        timer.schedule(new randomMazeMove(), 10000);
+        timer.schedule(new randomMazeMove(), 0, 250);
     }
 
     /**
@@ -296,8 +296,25 @@ public class NewApplication extends javax.swing.JFrame {
 
     class randomMazeMove extends TimerTask {
 
+        @Override
         public void run() {
-            System.out.println("Time's up!");
+            final java.util.Random random = new java.util.Random();
+            int i = random.nextInt(3);
+            System.out.println(Integer.toString(i));
+            switch (i) {
+                case 0:
+                    currentPosition = mazePanel.tryMoveN(currentPosition);
+                    break;
+                case 1:
+                    currentPosition = mazePanel.tryMoveE(currentPosition);
+                    break;
+                case 2:
+                    currentPosition = mazePanel.tryMoveS(currentPosition);
+                    break;
+                case 3:
+                    currentPosition = mazePanel.tryMoveW(currentPosition);
+                    break;
+            }
         }
     }
 
