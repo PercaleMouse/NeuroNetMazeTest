@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package neronetmazetester;
+
+import java.util.TimerTask;
+
 /**
  *
  * @author Admin
@@ -12,12 +15,14 @@ public class NewApplication extends javax.swing.JFrame {
 
     MazePanel mazePanel = new MazePanel();
     int currentPosition = 231;
-   
+    java.util.Timer timer;
 
     public NewApplication() {
         initComponents();
         jPanel2.setLayout(new java.awt.FlowLayout());
         jPanel2.add(mazePanel);
+        timer = new java.util.Timer();
+        timer.schedule(new randomMazeMove(), 10000);
     }
 
     /**
@@ -252,15 +257,15 @@ public class NewApplication extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        currentPosition = mazePanel.tryMoveN(currentPosition);   
+        currentPosition = mazePanel.tryMoveN(currentPosition);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        currentPosition = mazePanel.tryMoveE(currentPosition);  
+        currentPosition = mazePanel.tryMoveE(currentPosition);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        currentPosition = mazePanel.tryMoveS(currentPosition); 
+        currentPosition = mazePanel.tryMoveS(currentPosition);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -286,8 +291,15 @@ public class NewApplication extends javax.swing.JFrame {
                     currentPosition = mazePanel.tryMoveW(currentPosition);
                     break;
             }
-       }
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    class randomMazeMove extends TimerTask {
+
+        public void run() {
+            System.out.println("Time's up!");
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -308,11 +320,12 @@ public class NewApplication extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NewApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new NewApplication().setVisible(true);
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
