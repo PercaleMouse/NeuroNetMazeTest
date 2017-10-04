@@ -6,10 +6,8 @@
 package neronetmazetester;
 
 import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.util.Random;
-import javax.swing.Timer;
 
 /**
  *
@@ -259,15 +257,15 @@ public class NewApplication extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        currentPosition = mazePanel.tryMoveN(currentPosition);     // TODO add your handling code here:
+        currentPosition = mazePanel.tryMoveN(currentPosition);   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        currentPosition = mazePanel.tryMoveE(currentPosition);         // TODO add your handling code here:
+        currentPosition = mazePanel.tryMoveE(currentPosition);  
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        currentPosition = mazePanel.tryMoveS(currentPosition);  // TODO add your handling code here:
+        currentPosition = mazePanel.tryMoveS(currentPosition); 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -313,22 +311,13 @@ public class NewApplication extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NewApplication.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
+        
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NewApplication().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new NewApplication().setVisible(true);
         });
     }
 
