@@ -42,9 +42,12 @@ public class MazePanel extends javax.swing.JPanel {
         iconN = new ImageIcon(getClass().getResource("img/N.png"));
         flourIcon = new ImageIcon(getClass().getResource("img/tile_4_1.png"));
         wallIcon = new ImageIcon(getClass().getResource("img/tile_1_2.png"));
-        buttons = new JButton[vectorSize];
-        vectorSize = mazeSize * mazeSize;
+        
         mazeSize = 16;
+        vectorSize = mazeSize * mazeSize;
+        
+        buttons = new JButton[vectorSize];
+        
         enableEdit = false;
         
         al = (ActionEvent e) -> {
