@@ -5,9 +5,7 @@
  */
 package neronetmazetester;
 
-import java.awt.FlowLayout;
 import java.awt.event.ItemEvent;
-import java.util.Random;
 
 /**
  *
@@ -21,7 +19,7 @@ public class NewApplication extends javax.swing.JFrame {
 
     public NewApplication() {
         initComponents();
-        jPanel2.setLayout(new FlowLayout());
+        jPanel2.setLayout(new java.awt.FlowLayout());
         jPanel2.add(mazePanel);
     }
 
@@ -273,7 +271,7 @@ public class NewApplication extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        final Random random = new Random();
+        final java.util.Random random = new java.util.Random();
         while (true) {
             int i = random.nextInt(3);
             System.out.println(Integer.toString(i));
@@ -292,7 +290,6 @@ public class NewApplication extends javax.swing.JFrame {
                     break;
             }
        }
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

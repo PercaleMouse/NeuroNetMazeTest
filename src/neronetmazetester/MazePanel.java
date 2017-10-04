@@ -46,7 +46,6 @@ public class MazePanel extends javax.swing.JPanel {
             System.out.println(b.getActionCommand());
         };
 
-        // setSize(mazeSize * 20, mazeSize * 20);
         setLayout(new GridLayout(mazeSize, mazeSize, 0, 0));
         setBorder(BorderFactory.createLineBorder(Color.black));
 
@@ -69,18 +68,18 @@ public class MazePanel extends javax.swing.JPanel {
     }
 
     public void setEditModeON() {
+        enableEdit = true;
         for (int i = 0; i < vectorSize; i++) {
-            enableEdit = true;
             buttons[i].setBorder(new LineBorder(Color.BLACK));
         }
     }
 
     public void setEditModeOFF() {
+        enableEdit = false;
         for (int i = 0; i < vectorSize; i++) {
-            enableEdit = false;
             buttons[i].setBorder(null);
-            writeMaze();
         }
+        writeMaze();
     }
 
     public void writeMaze() {
@@ -106,7 +105,6 @@ public class MazePanel extends javax.swing.JPanel {
 
     public void readMaze() throws IOException {
         Path path = Paths.get("Maze.txt");
-        //считываем содержимое файла в массив байт
         byte[] bytes = Files.readAllBytes(path);
         for (int i = 0; i < vectorSize; i++) {
             if (bytes[i] == 49) {
