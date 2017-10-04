@@ -298,7 +298,7 @@ public class NewApplication extends javax.swing.JFrame {
 
         @Override
         public void run() {
-            final java.util.Random random = new java.util.Random();
+            java.util.Random random = new java.util.Random();
             int i = random.nextInt(3);
             System.out.println(Integer.toString(i));
             switch (i) {
