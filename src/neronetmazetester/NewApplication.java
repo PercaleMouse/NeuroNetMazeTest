@@ -22,7 +22,7 @@ public class NewApplication extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.FlowLayout());
         jPanel2.add(mazePanel);
         timer = new java.util.Timer();
-        timer.schedule(new randomMazeMove(), 0, 100);
+        
     }
 
     /**
@@ -273,25 +273,26 @@ public class NewApplication extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        final java.util.Random random = new java.util.Random();
-        while (true) {
-            int i = random.nextInt(4);
-            System.out.println(Integer.toString(i));
-            switch (i) {
-                case 0:
-                    currentPosition = mazePanel.tryMoveN(currentPosition);
-                    break;
-                case 1:
-                    currentPosition = mazePanel.tryMoveE(currentPosition);
-                    break;
-                case 2:
-                    currentPosition = mazePanel.tryMoveS(currentPosition);
-                    break;
-                case 3:
-                    currentPosition = mazePanel.tryMoveW(currentPosition);
-                    break;
-            }
-        }
+        timer.schedule(new randomMazeMove(), 0, 100);
+//        final java.util.Random random = new java.util.Random();
+//        while (true) {
+//            int i = random.nextInt(4);
+//            System.out.println(Integer.toString(i));
+//            switch (i) {
+//                case 0:
+//                    currentPosition = mazePanel.tryMoveN(currentPosition);
+//                    break;
+//                case 1:
+//                    currentPosition = mazePanel.tryMoveE(currentPosition);
+//                    break;
+//                case 2:
+//                    currentPosition = mazePanel.tryMoveS(currentPosition);
+//                    break;
+//                case 3:
+//                    currentPosition = mazePanel.tryMoveW(currentPosition);
+//                    break;
+//            }
+//        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     class randomMazeMove extends TimerTask {
