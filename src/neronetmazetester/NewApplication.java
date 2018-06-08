@@ -22,7 +22,7 @@ public class NewApplication extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.FlowLayout());
         jPanel2.add(mazePanel);
         timer = new java.util.Timer();
-        //timer.schedule(new randomMazeMove(), 0, 100);
+        timer.schedule(new randomMazeMove(), 0, 100);
     }
 
     /**
@@ -275,7 +275,7 @@ public class NewApplication extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         final java.util.Random random = new java.util.Random();
         while (true) {
-            int i = random.nextInt(32);
+            int i = random.nextInt(4);
             System.out.println(Integer.toString(i));
             switch (i) {
                 case 0:
@@ -299,7 +299,7 @@ public class NewApplication extends javax.swing.JFrame {
         @Override
         public void run() {
             java.util.Random random = new java.util.Random();
-            int i = random.nextInt(3);
+            int i = random.nextInt(4);
             System.out.println(Integer.toString(i));
             switch (i) {
                 case 0:
